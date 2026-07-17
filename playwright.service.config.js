@@ -4,7 +4,7 @@ const { DefaultAzureCredential } = require('@azure/identity');
 const config = require('./playwright.config');
 
 /* Learn more about service configuration at https://aka.ms/pww/docs/config */
-export default defineConfig(
+module.exports = defineConfig(
   config,
   createAzurePlaywrightConfig(config, {
     exposeNetwork: '<loopback>',
@@ -22,8 +22,8 @@ export default defineConfig(
     If you're already using other reporters, add them to this array.
     */
     reporter: [
-      ["html", { open: "never" }],
-      ["@azure/playwright/reporter"],
+      ['html', { open: 'never' }],
+      ['@azure/playwright/reporter'],
     ],
   }
 );
